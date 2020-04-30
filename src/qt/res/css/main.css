@@ -785,14 +785,14 @@ small screens.
 }
 
 .footable.ndc {
-    border-color: #ff9933;
+    border-color: #060D14;
 }
 .footable.ndc > tfoot > tr > th,
 .footable.ndc > thead > tr > th,
 .footable.ndc > tfoot > tr > td,
 .footable.ndc > thead > tr > td {
-    background-color: #ff9933;
-    border-color: #ff9933;
+    background-color: #060D14;
+    border-color: #060D14;
 }
 
 .footable > thead > tr > th,.footable > thead > tr > td {
@@ -1200,7 +1200,7 @@ label.recipient {
   padding: 7px 14px;
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
-  border-radius: 0px;
+  border-radius: 4px;
   background-color: transparent;
   color: inherit;
   vertical-align: middle;
