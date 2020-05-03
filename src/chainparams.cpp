@@ -42,7 +42,11 @@ int64_t CChainParams::GetProofOfWorkReward(int nHeight, int64_t nFees) const
         nSubsidy = 1 * COIN;
     else
     if (nHeight <= nLastPOWBlock)
+<<<<<<< HEAD
         nSubsidy = 1211 * COIN;
+=======
+        nSubsidy = 10111 * COIN;
+>>>>>>> master
 
 
 
@@ -224,7 +228,11 @@ public:
         nFirstBlockHalve = 1022514; // + 1 year blocks average - 10k blockupdt x 20 % staking
         nFirstYearStake = 531257;  // 501257 blocks/year + 20k blocks + 10 k blocksupdate x 69 % staking
 
+<<<<<<< HEAD
         nLastPOWBlock = 1200;
+=======
+        nLastPOWBlock = 100;
+>>>>>>> master
         nLastFairLaunchBlock = 1;
         nDistributionFund = 1;
     }
