@@ -10,10 +10,14 @@ CONFIG += thread
 !win32:CONFIG += static
 win32:CONFIG += static
 
-
-DEPS_PATH=
-
-
+BOOST_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+BOOST_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+OPENSSL_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+OPENSSL_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+BDB_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+BDB_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+MINIUPNPC_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+MINIUPNPC_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
  
 !android|!ios:QT += widgets webkitwidgets
 
@@ -35,7 +39,7 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
 
 BOOST_THREAD_LIB_SUFFIX=
-BDB_LIB_SUFFIX=-4.8
+BDB_LIB_SUFFIX=
 BOOST_LIB_SUFFIX=
 
 
@@ -89,14 +93,14 @@ macx {
 
 win32 {
   	BOOST_LIB_SUFFIX=
-	BOOST_INCLUDE_PATH=/home/bitbd/project/ndc/deps/boost-1.57/
-	BOOST_LIB_PATH=/home/bitbd/project/ndc/deps/boost-1.57/stage/lib
-	BDB_INCLUDE_PATH=/home/bitbd/project/ndc/deps/db-4.8/build_mxe
-	BDB_LIB_PATH=/home/bitbd/project/ndc/deps/db-4.8/build_mxe
-	OPENSSL_INCLUDE_PATH=/home/bitbd/project/ndc/deps/openssl-1.0.2r/include/
-	OPENSSL_LIB_PATH=/home/bitbd/project/ndc/deps/openssl-1.0.2r
-	MINIUPNPC_INCLUDE_PATH=/home/bitbd/project/ndc/deps/miniupnpc1.9
-	MINIUPNPC_LIB_PATH=/home/bitbd/project/ndc/deps/miniupnpc1.9
+	BOOST_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+    BOOST_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+    OPENSSL_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+    OPENSSL_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+    BDB_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+    BDB_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+    MINIUPNPC_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+    MINIUPNPC_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
         #USE_BUILD_INFO = 1
         #DEFINES += HAVE_BUILD_INFO
 
@@ -119,7 +123,7 @@ contains(RELEASE, 1) {
 
 !win32 {
 # for extra security against potential buffer overflows: enable GCCs Stack Smashing Protection
-QMAKE_CXXFLAGS *= -fstack-protector-all --param ssp-buffer-size=1 -std=c++11
+QMAKE_CXXFLAGS *= -fstack-protector-all --param ssp-buffer-size=1 
 QMAKE_LFLAGS *= -fstack-protector-all --param ssp-buffer-size=1
 # We need to exclude this for Windows cross compile with MinGW 4.2.x, as it will result in a non-working executable!
 # This can be enabled for Windows, when we switch to MinGW >= 4.4.x.
