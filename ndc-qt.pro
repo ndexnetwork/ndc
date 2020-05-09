@@ -10,14 +10,14 @@ CONFIG += thread
 !win32:CONFIG += static
 win32:CONFIG += static
 
-BOOST_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
-BOOST_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
-OPENSSL_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
-OPENSSL_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
-BDB_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
-BDB_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
-MINIUPNPC_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
-MINIUPNPC_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+#BOOST_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+#BOOST_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+#OPENSSL_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+#OPENSSL_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+#BDB_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+#BDB_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
+#MINIUPNPC_INCLUDE_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/include/
+#MINIUPNPC_LIB_PATH=/home/ndex/PROJECT/@ndc/@GITHUB/depends/lib
  
 !android|!ios:QT += widgets webkitwidgets
 
@@ -123,14 +123,14 @@ contains(RELEASE, 1) {
 
 !win32 {
 # for extra security against potential buffer overflows: enable GCCs Stack Smashing Protection
-QMAKE_CXXFLAGS *= -fstack-protector-all --param ssp-buffer-size=1 
+QMAKE_CXXFLAGS *= -fstack-protector-all --param ssp-buffer-size=1 -std=c++11
 QMAKE_LFLAGS *= -fstack-protector-all --param ssp-buffer-size=1
 # We need to exclude this for Windows cross compile with MinGW 4.2.x, as it will result in a non-working executable!
 # This can be enabled for Windows, when we switch to MinGW >= 4.4.x.
 }
 # for extra security on Windows: enable ASLR and DEP via GCC linker flags
 win32:QMAKE_LFLAGS *= -Wl,--dynamicbase -Wl,--nxcompat
-win32:QMAKE_LFLAGS += -static-libgcc -static-libstdc++
+#win32:QMAKE_LFLAGS += -static-libgcc -static-libstdc++
 
 # use: qmake "USE_UPNP=1" ( enabled by default; default)
 #  or: qmake "USE_UPNP=0" (disabled by default)
@@ -193,8 +193,7 @@ contains(USE_O3, 1) {
     QMAKE_CFLAGS_RELEASE -= -O2
     QMAKE_CXXFLAGS += -O3
     QMAKE_CFLAGS += -O3
-    QMAKE_CXXFLAGS += -msse2
-    QMAKE_CFLAGS += -msse2
+    
 }
 
 *-g++-32 {
