@@ -1,6 +1,6 @@
 # NDC Desktop files and pixmaps for Linux
 
-![NDC-NDC](https://i.imgur.com/prq5JYO.png)
+![NDC-NDC](https://i.imgur.com/rlHuEOO.png)
 
 * pre-req: "ndc" should be cp to /usr/local/bin
 
